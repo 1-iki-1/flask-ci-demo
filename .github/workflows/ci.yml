@@ -26,4 +26,11 @@ jobs:
       run: pytest
 
     - name: Create build artifact
-      run: zip -r app.zip ./
+  run: zip -r app.zip ./
+
+- name: Upload build artifact
+  uses: actions/upload-artifact@v4
+  with:
+    name: flask-app
+    path: app.zip
+
